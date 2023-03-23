@@ -22,3 +22,13 @@ deploy:
     tags: true
     branch: master
 
+deploy:
+  provider: pages
+  api_key:
+    secure: "rNTzAChb/LvbgcBrFzsjQmZLDII9RcEDws/pKeDIz3IiPC0YLY1wCdcXzXiGoRH/ogQEjypKaDS5PyD321EZNRvhwbbEZbPNncqkoeZhoTp5mdIRz2gYKkpy2EH9Ri18AIOSrY1WBDxci2a/AB3MBRY+0bLIhPJGz+ccFaExCYYD66SyJIc+TfSwaBVHC9gGWb2v8dxzxk1xBEvy+jYF3TLNxbgcigiKLoy5FBM8zm0ezCfqIZb3SDNfiTImCKTTWXyKxODvH48hWy4E764YxZmBqtMbfZBqkMrpnGUux4J3Ko+ZyNOIbOn7hwZ10tPpXcCrgYhfeV1OMzQPYqBEPgsY4XKMZ88nrG3tmHErXmYA5yK+vRGMv4Y53F48k2NTOlE4yxTc8tmc+BtQCe++vjoNk249UFQDFSBZUD460EjIp8Z+vfjuI2RjiztCWYw7S7O8gDkGMctdd8nZME9zgdoWEBc7IEseD7PMAuxLg3pgNDH31K1SxIMI1SvbZGT37RKb5+Lo/0eR2Zbpr7rQBRY2LaClAY+/Me3NcSCSE1eMx+5kIUK+SGpI/RkH9Js6JNIwLr6kOYe1n64Int53m82DKA86qeSZdB9NL9c64cc8QqpU5JAm36fXV568pmm3yHafSRtTOhHthuxah4b7+H28I43m0Y0WkzJNzKQUQlQ="
+  file: 
+  - ./src/main.pdf
+  skip_cleanup: true
+  on:
+    branch: master
+
