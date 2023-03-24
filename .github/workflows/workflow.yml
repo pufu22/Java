@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: src_site
-          path: ./src
+          path: ./src/*.pdf
 
   deploy:
     name: Deploy to pages
