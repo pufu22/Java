@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     name: Deploy to pages
-    needs: build_latex
+    needs: [build_latex pages-directory-listing]
 
     permissions:
       pages: write      
