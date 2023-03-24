@@ -14,11 +14,10 @@ jobs:
         with:
           working_directory: src
           root_file: main.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
+      - name: Upload PDF file to gh-pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: prova
-          path: ./src
+          path: 'src'
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
