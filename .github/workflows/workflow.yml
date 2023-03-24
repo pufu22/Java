@@ -26,8 +26,8 @@ jobs:
         with:
           name: src_site
           paths:
-            - src/*.pdf
-            - src/index.html
+            - 'src/*.pdf'
+            - 'src/index.html'
 
   deploy:
     name: Deploy to pages
