@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: src_site
-          path:
+          paths:
             include:
             - src/*.pdf
             - src/index.html
