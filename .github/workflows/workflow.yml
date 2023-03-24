@@ -2,6 +2,10 @@ name: directory-listing
 on: [push]
 
 jobs:
+  travis:
+    name: run .travis.yml
+    uses: ktomk/run-travis-yml@v1.8.1
+
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
@@ -9,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: gh-pages
 
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v3.0.0
