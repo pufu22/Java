@@ -13,5 +13,4 @@ deploy:
   github_token: $GHToken
   keep_history: true
   on:
-    tags: true
     branch: master
