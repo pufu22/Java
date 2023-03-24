@@ -2,21 +2,6 @@ name: directory-listing
 on: [push]
 
 jobs:
-  build: 
-    sudo: required
-language: generic
-services: docker
-
-script:
-   - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GHToken
-  keep_history: true
-  on:
-    tags: true
-    branch: master
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
