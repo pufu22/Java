@@ -26,7 +26,6 @@ jobs:
         with:
           name: src_site
           paths:
-            include:
             - src/*.pdf
             - src/index.html
 
