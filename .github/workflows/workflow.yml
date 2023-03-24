@@ -2,6 +2,21 @@ name: directory-listing
 on: [push]
 
 jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "*.tex"
+          glob_root_file: true
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: src/
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
