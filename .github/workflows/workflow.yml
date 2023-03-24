@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: gh-pages
 
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v3.0.0
