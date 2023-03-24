@@ -8,18 +8,21 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
         with:
-          ref: gh-pages
+          submodules: 'recursive'
+          fetch-depth: 0
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
           working_directory: src
           root_file: main.tex
       - name: Upload PDF file to gh-pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          path: 'src'
+          name: src_site
+          path: ./src
 
   deploy:
+    name: Deploy to pages
     needs: build_latex
 
     permissions:
@@ -32,6 +35,16 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: src_site
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
