@@ -12,6 +12,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          working_directory: src
           root_file: main.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
@@ -36,5 +37,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'src'      # upload generated folder
+    needs: build_latex
   
     
