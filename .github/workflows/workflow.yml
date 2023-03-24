@@ -17,7 +17,8 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          path: 'src'
+          name: prova
+          path: ./src
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
