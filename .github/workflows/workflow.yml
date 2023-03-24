@@ -8,7 +8,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: gh-pages
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
