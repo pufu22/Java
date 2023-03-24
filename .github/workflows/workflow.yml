@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: src/
+          path: main.pdf
   pages-directory-listing:
     runs-on: ubuntu-latest
     name: Directory Listings Index
