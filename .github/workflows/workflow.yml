@@ -44,7 +44,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: github-pages
+          name: src_site
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
