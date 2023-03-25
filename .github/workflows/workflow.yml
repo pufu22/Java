@@ -27,12 +27,10 @@ jobs:
         with:
           name: src_site
           path: |
-            !*.fls
-            !*.tex
-            !*.out
-            !*.aux
-            !*.fdb_latexmk
-            !*.log
+            src/*.pdf
+            src/*.html
+            src/tex/*.pdf
+            src/tex/*.html
             
 
   deploy:
