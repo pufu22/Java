@@ -28,9 +28,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: src_site
-          path: ../*.pdf
+          path: |
+            src/*.pdf
+            src/tex/*.pdf
             
-
   deploy:
     name: Deploy to pages
     needs: build_latex
