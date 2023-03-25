@@ -27,8 +27,13 @@ jobs:
         with:
           name: src_site
           path: |
-            src/*.pdf
-            src/index.html
+            !*.fls
+            !*.tex
+            !*.out
+            !*.aux
+            !*.fdb_latexmk
+            !*.log
+            
 
   deploy:
     name: Deploy to pages
