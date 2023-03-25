@@ -16,8 +16,8 @@ jobs:
           working_directory: src
           root_file: "**/*.tex"
           glob_root_file: true
-          post_compile: "latexmk -c"
           work_in_root_file_dir: true
+          post_compile: "latexmk -c"
       
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v3.0.0
