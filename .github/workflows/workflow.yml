@@ -33,6 +33,8 @@ jobs:
             src/tex/*.pdf
             src/*.html
             src/tex/*.html
+            !src/tex/*.tex
+            !src/*.tex
             
   deploy:
     name: Deploy to pages
