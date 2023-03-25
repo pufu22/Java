@@ -14,7 +14,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           working_directory: src
-          root_file: main.tex
+          root_file: "*.tex"
+          glob_root_file: true
       
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v3.0.0
