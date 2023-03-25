@@ -31,6 +31,8 @@ jobs:
           path: |
             src/*.pdf
             src/tex/*.pdf
+            src/*.html
+            src/tex/*.html
             
   deploy:
     name: Deploy to pages
