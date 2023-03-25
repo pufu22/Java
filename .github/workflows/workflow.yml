@@ -19,10 +19,7 @@ jobs:
           work_in_root_file_dir: true
           post_compile: "latexmk -c;cd tex; latexmk -c"
       
-      - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v3.0.0
-        with:
-          FOLDER: src      #directory to generate index
+      
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v3
@@ -35,6 +32,11 @@ jobs:
             src/tex/*.html
             !src/tex/*.tex
             !src/*.tex
+
+            - name: Generate Directory Listings
+        uses: jayanta525/github-pages-directory-listing@v3.0.0
+        with:
+          FOLDER: src      #directory to generate index
             
   deploy:
     name: Deploy to pages
