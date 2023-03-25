@@ -16,6 +16,7 @@ jobs:
           working_directory: src
           root_file: "*.tex"
           glob_root_file: true
+          post_compile: "latexmk -c"
       
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v3.0.0
@@ -26,11 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: src_site
-          path: |
-            src/*.pdf
-            src/*.html
-            src/tex/*.pdf
-            src/tex/*.html
+          path: ./src
             
 
   deploy:
