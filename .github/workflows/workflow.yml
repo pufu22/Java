@@ -1,6 +1,14 @@
 name: directory-listing
 on: [push]
 
+permissions:
+  contents: write
+  deployments: write
+  id-token: write
+  pages: write
+  pull-requests: write
+  statuses: write
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -10,32 +18,37 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
+
+      
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          working_directory: src
           root_file: "**/*.tex"
           glob_root_file: true
           work_in_root_file_dir: true
-          post_compile: "latexmk -c;cd tex; latexmk -c"
-      
-            #directory to generate index
-      - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v3.0.0
-        with:
-          FOLDER: src
           
-      - name: Upload PDF artifact
+      - name: Remove File
+        run: |
+          find . -name "*.tex" -exec rm -rf {} \;
+          find . -name "*.log" -exec rm -rf {} \;
+          find . -name "*.fls" -exec rm -rf {} \;
+          find . -name "*.aux" -exec rm -rf {} \;
+          find . -name "*.out" -exec rm -rf {} \;
+          find . -name "*.fdb_latexmk" -exec rm -rf {} \;
+
+      - name: Generate Directory Listings
+        uses: jayanta525/github-pages-directory-listing@v2.0.0
+        with:
+          FOLDER: JAVA
+
+      
+
+      - name: Upload artifact with dir
         uses: actions/upload-artifact@v3
         with:
           name: src_site
-          path: |
-            src/*.pdf
-            src/tex/*.pdf
-            src/*.html
-            src/tex/*.html
-            !src/tex/*.tex
-            !src/*.tex
+          path: JAVA
          
   deploy:
     name: Deploy to pages
